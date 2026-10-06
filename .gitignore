@@ -1,0 +1,16 @@
+# Secrets: never in git. Commit a .env.example with keys and no values.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_*
+!id_*.pub
+kubeconfig
+*.kubeconfig
+.kube/
+
+# Local data and noise
+data/
+*.log
+.DS_Store
