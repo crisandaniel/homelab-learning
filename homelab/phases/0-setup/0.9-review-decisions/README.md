@@ -14,7 +14,7 @@ what it costs, is what lets me (or a teammate) change it later without starting 
 - [ ] Phase 0 is tagged in git
 
 ## Done when
-`git tag` lists `phase-0-done`, and I can explain each accepted decision in one sentence without opening the file.
+`git tag` lists `homelab-phase-0-done`, and I can explain each accepted decision in one sentence without opening the file.
 
 ## Hints
 
@@ -26,7 +26,7 @@ the Consequences section, not something to hide.
 
 <details><summary>Hint 2: next step</summary>
 
-After tagging, ask the agent for "quiz phase 0".
+After tagging, ask the agent for "quiz homelab phase 0".
 </details>
 
 ---

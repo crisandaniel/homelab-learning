@@ -12,18 +12,33 @@ This file explains why it is written the way it is, so I can improve it as I lea
 
 One source of truth, several tools. Same idea as not copy-pasting config.
 
+## Layers: shared prompt + one per track
+
+```
+AGENTS.md            the method: mentor role, who I am, session flow, hard rules   (always loaded)
+homelab/AGENTS.md    the lab: hardware, ADRs, infra rules                           (when working in homelab/)
+dev/AGENTS.md        dev resources, concept/project formats, Docker setup           (when working in dev/)
+```
+
+Claude Code loads the root `CLAUDE.md` at the start, and a subfolder's `CLAUDE.md` when it works
+with files in that folder. Other tools apply the `AGENTS.md` closest to the file being edited.
+
+Why split: the agent gets only the context it needs. Lab hardware is noise during a closures
+exercise, and a long prompt dilutes the instructions that matter. Rule of thumb: **what is true
+everywhere goes in the root, what is true in one folder goes in that folder.**
+
 ## Anatomy of the prompt
 
 | Section | What it does | Why it is there |
 |---|---|---|
 | **Role** | "Mentor, not implementer" + what failure looks like | The default behaviour of a coding agent is to *do the work*. Without this, it would solve every task for me |
-| **Who the learner is** | Background, how I learn, languages | The agent adapts explanations to me instead of to an average user |
-| **The lab** | Hardware, tools, practice app | Facts it would otherwise guess wrong (e.g. arm64) |
+| **Who the learner is** | Background, goal, how I learn, languages | The agent adapts explanations to me instead of to an average user |
+| **Context per track** | Lab hardware; dev resources and formats | Facts it would otherwise guess wrong (e.g. arm64, which chapter to read) |
 | **Repo map** | Where things live | It finds progress and decisions without searching blindly |
 | **How to run a session** | Numbered steps | A workflow is followed more reliably than scattered rules |
 | **Creating tasks** | Format and constraints | Every generated task looks the same and stays 30–60 min |
 | **Decisions** | Present options, I decide | Prevents the agent from silently choosing for me |
-| **Modes** | Trigger phrases ("quiz phase N") | Short commands for behaviours I use often |
+| **Modes** | Trigger phrases ("quiz dev stage 1", "review my code") | Short commands for behaviours I use often |
 | **Hard rules** | Things that must never happen | Safety and secrets, kept short and separate so they stand out |
 
 ## Techniques used

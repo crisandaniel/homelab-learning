@@ -1,15 +1,21 @@
 # Journal
 
-Newest entry on top. Short is fine: date, task, what happened, where I got stuck.
+Both tracks, newest entry on top. Short is fine: date, track, task, what happened, where I got stuck.
 
 <!--
-## YYYY-MM-DD · <task id>
+## YYYY-MM-DD · [dev|homelab] <task id>
 - Did:
 - Stuck on:
 - Next:
 -->
 
-## 2026-10-06 · project start
+## 2026-10-08 · [dev] track added
+- Did: added the dev track (JS → TS → React → Node → Next), moved the homelab files into `homelab/`,
+  split the agent prompt into a shared root file and one per track.
+- Stuck on: nothing yet.
+- Next: dev 0.1 (Docker minimum for dev).
+
+## 2026-10-06 · [homelab] project start
 - Did: planned the phases, created the repo, wrote the agent prompt and the setup ADRs.
 - Stuck on: nothing yet. The Mac mini is ordered.
 - Next: 0.1 when the Mac mini arrives.

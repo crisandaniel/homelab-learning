@@ -14,3 +14,11 @@ kubeconfig
 data/
 *.log
 .DS_Store
+
+# JS / TS build output and dependencies
+node_modules/
+dist/
+build/
+.next/
+coverage/
+*.tsbuildinfo
