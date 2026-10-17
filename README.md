@@ -33,7 +33,7 @@ Rhythm: 30–45 minutes a day, 4–5 days a week. Consistency beats long weekend
 | File | What |
 |---|---|
 | [`JOURNAL.md`](JOURNAL.md) | One log for both tracks, entries tagged `[dev]` or `[homelab]` |
-| [`flashcards.tsv`](flashcards.tsv) | Anki import file for both tracks |
+| [`flashcards.tsv`](flashcards.tsv) | Anki export of both decks (backup, not edited by hand) |
 | [`AGENTS.md`](AGENTS.md) | Shared agent prompt; each track adds its own `AGENTS.md` |
 | [`docs/prompting.md`](docs/prompting.md) | How the agent prompts are built, and how to improve them |
 
@@ -45,14 +45,18 @@ Rhythm: 30–45 minutes a day, 4–5 days a week. Consistency beats long weekend
 
 ## Anki
 
-`flashcards.tsv` is tab-separated, one card per line: `Front`, `Back`, `Tags`, `Deck`.
-The header lines tell Anki how to read it, so no import settings need changing.
+Cards are written in **Anki Desktop**; Anki is the source of truth. `flashcards.tsv` is only an
+export kept in git as a backup. Import copies cards into Anki's own collection: editing the file
+does not change Anki, and editing in Anki does not change the file.
 
-- **Import:** Anki → File → Import → `flashcards.tsv`. If asked about duplicates, choose
-  **Update**: re-importing the whole file is safe and keeps review progress.
-- **Decks:** `Learning::Dev` and `Learning::Homelab` (created on first import).
+- **Decks:** `Learning::Dev` and `Learning::Homelab`.
 - **Tags:** `dev js task-1.5`, `homelab phase-0 task-0.3`. Filter by tag before a quiz.
-- **Editing:** tabs are invisible; in Neovim `:set list` shows them as `^I`.
+- **Code on cards:** use the editor's HTML view (`Ctrl+Shift+X`) for `<code>` and `<pre>`.
+- **Export** at the end of a session with new cards: File → Export → **Notes in Plain Text**, deck
+  `Learning`, tick **Include HTML**, **tags**, **deck name** and **unique identifier**. Save over
+  `flashcards.tsv` and commit it with the task.
+- **Restore** (new machine, lost collection): File → Import → `flashcards.tsv`. The unique
+  identifier lets Anki update existing cards instead of making duplicates.
 - **Daily:** 10 minutes of reviews, on the Mac or the phone (AnkiWeb sync).
 
 Good card: "What happens to a pod that fails its readiness probe?" Weak card: "What is a readiness

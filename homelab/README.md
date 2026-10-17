@@ -13,7 +13,7 @@ plus [`AGENTS.md`](AGENTS.md) in this folder.
 1. Pick the next unchecked task below. If its file does not exist yet, ask the agent to create it.
 2. **Predict** what a command will do before running it.
 3. Stuck for more than 20 minutes: open the next hint, or ask, saying first what I tried.
-4. Done: fill "In my own words", add flashcards to `../flashcards.tsv`, write a `[homelab]` entry in
+4. Done: fill "In my own words", add flashcards in Anki (export to `../flashcards.tsv`), write a `[homelab]` entry in
    `../JOURNAL.md`, tick the box, commit with the `homelab` prefix.
 5. End of phase: tag it (`git tag homelab-phase-0-done`) and ask for a **quiz**.
 
