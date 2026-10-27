@@ -1,0 +1,16 @@
+{
+  "name": "homelab-learning",
+  "version": "1.0.0",
+  "description": "A pitiful attempt to learn and remember",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "anki:link": "find . -type f -iname \"*.md\" -not -path \"*/my-anki-cards/*\" -exec sh -c 'grep -q \"^[QA]:\" \"$1\" && rel=$(echo \"$1\" | sed \"s|^\\./||\") && name=$(echo \"$rel\" | sed \"s|/|__|g\") && ln -sf \"$(pwd)/$rel\" \"./my-anki-cards/$name\"' _ {} \\;",
+    "anki:fa": "cd my-anki-cards && ankiops files-to-anki",
+    "anki:af": "cd my-anki-cards && ankiops anki-to-files"
+  },
+  "author": "daniel c.",
+  "license": "ISC"
+}

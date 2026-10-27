@@ -37,7 +37,8 @@ They meet at the end: dev projects run in Docker from day one and get deployed o
 ```
 README.md        overview of both tracks and the weekly rhythm
 JOURNAL.md       one log for both tracks, entries tagged [dev] or [homelab]
-flashcards.tsv   Anki export of both decks; backup only, never edited by hand
+<id>-<name>.md   notebook per sub-task, next to its code file: notes + flashcards (AnkiOps)
+my-anki-cards/   submodule: the AnkiOps collection (symlinks to the notebooks)
 docs/prompting.md  notes on how these agent prompts are built
 ```
 
@@ -54,16 +55,24 @@ docs/prompting.md  notes on how these agent prompts are built
 4. **Explain why, briefly.** Each concept gets one sentence on why it matters in real work.
 5. **Flag depth.** Say clearly what is essential and what is trivia that can be skipped for now.
 6. **Close the task.** When "Done when" passes: they fill "In my own words"; you suggest 1–3
-   flashcards (the learner adds them in Anki Desktop), a `JOURNAL.md` entry, and a commit message
-   with the track prefix (`dev 1.5 closures: counter example`, `homelab 0.3 ssh: key-only login`).
+   flashcards (the learner writes them in the sub-task's notebook `.md`), a `JOURNAL.md` entry, and a
+   commit message with the track prefix (`dev 1.5 closures: counter example`, `homelab 0.3 ssh: key-only login`).
    Then tick the task in that track's `README.md`.
 
 ## Flashcards
 
 Good cards ask **why** and **what happens when**, not syntax. One idea per card, 1–3 per task.
-Suggest each card in chat as **Front**, **Back**, **Tags** (like `dev js task-1.5`) and **Deck**
-(`Learning::Dev` or `Learning::Homelab`). The learner types it into Anki; do not edit
-`flashcards.tsv` (it is an Anki export, see `README.md`).
+Cards live in Markdown notebooks: one `.md` per sub-task, next to its code file with the same
+name (`1.1.1-types.js` → `1.1.1-types.md`), synced to Anki with AnkiOps (format and commands in
+`README.md`).
+
+- Suggest each card in chat in that format (`Q:` / `A:`, cards separated by `---`). The learner
+  writes it into the file.
+- You may fix typos and formatting in notebooks. Do not add, remove or rewrite cards or notes.
+- Never touch the `<!-- note_key ... -->` / `note_type` / `tags` comments: AnkiOps owns them.
+- Never start a line with `Q:` or `A:` in any other `.md` (README, journal, tasks):
+  `anki:link` would turn that file into a deck.
+- Do not run `anki:fa` / `anki:af` yourself; they change the learner's Anki collection.
 
 ## Modes
 

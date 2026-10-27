@@ -5,13 +5,15 @@ compared with a number, `if (count)` failing when `count` is `0`. Also a classic
 **Read:** javascript.info: [Data types](https://javascript.info/types),
 [Type conversions](https://javascript.info/type-conversions),
 [Basic operators](https://javascript.info/operators) (string concatenation and unary `+`),
-[Comparisons](https://javascript.info/comparisons) (~40 min)
+[Comparisons](https://javascript.info/comparison) (~40 min)
 **Skip:** BigInt details, Symbol (comes later), operator precedence table.
 **Time box:** 45–60 min
 
 ## Write (material closed)
+
 File: `examples.js`, run with my command from 0.1.
-- [ ] The 8 types, with `typeof` for each, including the `typeof null` quirk and why it is a quirk
+
+- [x] The 8 types, with `typeof` for each, including the `typeof null` quirk and why it is a quirk
 - [ ] Implicit conversion with `+` vs. `-`, `*`, `/`: when strings win and when numbers win
 - [ ] The full list of falsy values, and one bug that `if (value)` causes with a valid value
 - [ ] `==` vs. `===`: three cases where they give different results
@@ -19,6 +21,7 @@ File: `examples.js`, run with my command from 0.1.
 - [ ] Checking for `NaN` correctly
 
 ## Done when
+
 The tasks at the end of the four chapters are answered **in a comment block first**, then checked
 by running them. Every wrong answer has a one-line comment explaining why it was wrong.
 
@@ -45,6 +48,7 @@ true      the special pair for ==
 false     NaN is not equal to anything, itself included; use Number.isNaN
 object    a bug from the first version of JS, kept for compatibility
 ```
+
 </details>
 
 ---

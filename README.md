@@ -33,7 +33,8 @@ Rhythm: 30–45 minutes a day, 4–5 days a week. Consistency beats long weekend
 | File | What |
 |---|---|
 | [`JOURNAL.md`](JOURNAL.md) | One log for both tracks, entries tagged `[dev]` or `[homelab]` |
-| [`flashcards.tsv`](flashcards.tsv) | Anki export of both decks (backup, not edited by hand) |
+| `<id>-<name>.md` | Notebook for one sub-task, next to its code file: notes + flashcards (see [Anki](#anki)) |
+| `my-anki-cards/` | Submodule: the [AnkiOps](https://pypi.org/project/ankiops/) collection that syncs the cards with Anki |
 | [`AGENTS.md`](AGENTS.md) | Shared agent prompt; each track adds its own `AGENTS.md` |
 | [`docs/prompting.md`](docs/prompting.md) | How the agent prompts are built, and how to improve them |
 
@@ -45,18 +46,30 @@ Rhythm: 30–45 minutes a day, 4–5 days a week. Consistency beats long weekend
 
 ## Anki
 
-Cards are written in **Anki Desktop**; Anki is the source of truth. `flashcards.tsv` is only an
-export kept in git as a backup. Import copies cards into Anki's own collection: editing the file
-does not change Anki, and editing in Anki does not change the file.
+Cards live in **Markdown notebooks in this repo**; the files are the source of truth. Each
+sub-task has one `.md` next to its code file, with the same name: `1.1.1-types.js` →
+`1.1.1-types.md`. The notebook is where notes and flashcards for that sub-task go.
+[AnkiOps](https://pypi.org/project/ankiops/) syncs the cards with Anki through the
+`my-anki-cards/` submodule.
 
-- **Decks:** `Learning::Dev` and `Learning::Homelab`.
-- **Tags:** `dev js task-1.5`, `homelab phase-0 task-0.3`. Filter by tag before a quiz.
-- **Code on cards:** use the editor's HTML view (`Ctrl+Shift+X`) for `<code>` and `<pre>`.
-- **Export** at the end of a session with new cards: File → Export → **Notes in Plain Text**, deck
-  `Learning`, tick **Include HTML**, **tags**, **deck name** and **unique identifier**. Save over
-  `flashcards.tsv` and commit it with the task.
-- **Restore** (new machine, lost collection): File → Import → `flashcards.tsv`. The unique
-  identifier lets Anki update existing cards instead of making duplicates.
+Card format: a line starting with `Q:` (front), then one starting with `A:` (back); cards are
+separated by `---`. Code goes in normal fenced blocks. Leave the `<!-- note_key ... -->` comments
+alone: AnkiOps adds them and uses them to update the same note instead of making a duplicate.
+
+> Any `.md` with a line that **starts** with `Q:` or `A:` becomes a deck. Do not start lines that
+> way in other docs (READMEs, journal).
+
+Sync (Anki Desktop must be open):
+
+| Command | What |
+|---|---|
+| `npm run anki:link` | Symlink every `.md` with `Q:`/`A:` lines into `my-anki-cards/`, named by its path (`dev__concepts__...__1.1.1-types.md`). Run after adding a new notebook |
+| `npm run anki:fa` | Files → Anki: push new and edited cards into Anki |
+| `npm run anki:af` | Anki → files: pull edits made in Anki back into the Markdown files |
+
+- **After a sub-task:** write the cards in its notebook, `anki:link` (if the file is new),
+  `anki:fa`, commit the notebook with the code.
+- **Edited a card in Anki** (desktop or phone): `anki:af`, then commit the changed files.
 - **Daily:** 10 minutes of reviews, on the Mac or the phone (AnkiWeb sync).
 
 Good card: "What happens to a pod that fails its readiness probe?" Weak card: "What is a readiness

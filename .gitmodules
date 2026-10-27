@@ -1,0 +1,3 @@
+[submodule "my-anki-cards"]
+	path = my-anki-cards
+	url = git@gh-personal:crisandaniel/my-anki-cards.git
