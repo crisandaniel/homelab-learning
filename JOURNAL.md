@@ -9,6 +9,13 @@ Both tracks, newest entry on top. Short is fine: date, track, task, what happene
 - Next:
 -->
 
+## 2026-11-03 · [dev] 1.1.2 type conversions
+
+- Completed 1.1.1 during a couple of days 
+- Still didn't have a daily routine (the task seemed boring)
+- Switched to neovim and tmux for less noise. 
+ 
+
 ## 2026-10-27 · [dev] 1.1 types
 
 - Completed 1.1.1 types after some iterations

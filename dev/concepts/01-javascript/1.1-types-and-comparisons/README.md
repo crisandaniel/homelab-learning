@@ -14,7 +14,7 @@ compared with a number, `if (count)` failing when `count` is `0`. Also a classic
 File: `examples.js`, run with my command from 0.1.
 
 - [x] The 8 types, with `typeof` for each, including the `typeof null` quirk and why it is a quirk
-- [ ] Implicit conversion with `+` vs. `-`, `*`, `/`: when strings win and when numbers win
+- [x] Implicit conversion with `+` vs. `-`, `*`, `/`: when strings win and when numbers win
 - [ ] The full list of falsy values, and one bug that `if (value)` causes with a valid value
 - [ ] `==` vs. `===`: three cases where they give different results
 - [ ] `null` and `undefined` in comparisons: why `null >= 0` and `null == 0` disagree
