@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "anki:link": "find . -type f -iname \"*.md\" -not -path \"*/my-anki-cards/*\" -exec sh -c 'grep -q \"^[QA]:\" \"$1\" && rel=$(echo \"$1\" | sed \"s|^\\./||\") && name=$(echo \"$rel\" | sed \"s|/|__|g\") && ln -sf \"$(pwd)/$rel\" \"./my-anki-cards/my-cards/homelab-learning/$name\"' _ {} \\;",
-    "anki:fa": "cd my-anki-cards && make homelab-learning-fa",
-    "anki:af": "cd my-anki-cards && make homelab-learning-af",
+    "anki:link": "find . -type f -iname \"*.md\" -not -path \"*/my-anki-cards/*\" -exec sh -c 'grep -q \"^[QA]:\" \"$1\" && rel=$(echo \"$1\" | sed \"s|^\\./||\") && name=$(echo \"$rel\" | sed \"s|/|__|g\") && ln -sf \"$(pwd)/$rel\" \"./my-anki-cards/$name\"' _ {} \\;",
+    "anki:fa": "npm run anki:link && cd my-anki-cards && make fa",
+    "anki:af": "npm run anki:link && cd my-anki-cards && make af",
     "test": "node --test --test-reporter=spec \"**/*.spec.js\""
   },
   "author": "daniel c.",
