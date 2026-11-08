@@ -9,12 +9,13 @@ Both tracks, newest entry on top. Short is fine: date, track, task, what happene
 - Next:
 -->
 
-## 2026-11-08 · [dev] 1.1.2 type conversions
+## 2026-11-08 · [dev] 1.1.3 falsy-truthy
 
 - things are going slow and not appealing; feels like no progress
 - changed approach using NotebookLM to generate summary or a chapter from js.info
 - summary includes corner cases, interview questions
-- also AI generates anki cards from now on based on the summry
+- also AI generates anki cards from now on based on the summary
+- spec 1.1.4 done
 
 ## 2026-11-03 · [dev] 1.1.2 type conversions
 
