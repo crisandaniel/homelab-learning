@@ -20,10 +20,10 @@ echo "Session ${SESSION} does not exist. Creating..."
 tmux new-session -d -s $SESSION -n homelab -c $DIR      
 
 # send keys to first pane homelab.0
-tmux send-keys   -t "${SESSION}:homelab.0" 'nvim .' C-m          
+#tmux send-keys   -t "${SESSION}:homelab.0" 'nvim .' C-m          
 tmux split-window -h -t "${SESSION}:homelab.0" -c $DIR           
 tmux send-keys   -t "${SESSION}:homelab.1" 'node --test --watch --test-reporter=spec "**/*.spec.js"' C-m
-tmux split-window -v -l 35% -t "${SESSION}:homelab.1" -c $DIR    # dreapta jos, 35% din înălțime
+tmux split-window -v -l 50% -t "${SESSION}:homelab.1" -c $DIR    # dreapta jos, 35% din înălțime
 tmux send-keys   -t "${SESSION}:homelab.2" 'claude' C-m
 
 tmux select-pane -t "${SESSION}:homelab.0"              # focus pe nvim
