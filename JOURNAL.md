@@ -9,6 +9,10 @@ Both tracks, newest entry on top. Short is fine: date, track, task, what happene
 - Next:
 -->
 
+## 2026-11-09 · [dev] 1.2 functions
+- done with functions
+- things moved a bit faster with the new approach
+
 ## 2026-11-08 · [dev] 1.1.3 falsy-truthy
 
 - things are going slow and not appealing; feels like no progress

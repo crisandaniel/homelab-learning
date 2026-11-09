@@ -30,7 +30,7 @@ Task files are created when I reach them. If a file is missing, ask the agent to
 
 ### Stage 1: JavaScript, the language → [`concepts/01-javascript`](concepts/01-javascript/)
 - [x] 1.1 Types, conversions and comparisons (`==` vs `===`)
-- [ ] 1.2 Functions: declarations, expressions, arrows, hoisting
+- [x] 1.2 Functions: declarations, expressions, arrows, hoisting
 - [ ] 1.3 Objects, references and copying
 - [ ] 1.4 Arrays and their methods (`map`, `filter`, `reduce`), destructuring, spread/rest
 - [ ] 1.5 Scope and closures

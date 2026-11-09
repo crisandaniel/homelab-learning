@@ -12,12 +12,12 @@ initialization" errors.
 
 ## Write (material closed)
 File: `examples.js`.
-- [ ] The same small function written three ways: declaration, expression, arrow
-- [ ] Default parameters, and what a function returns when it has no `return`
-- [ ] A function passed as an argument (callback) and called by another function
-- [ ] Hoisting: calling each of the three forms **before** its definition, with a comment on what
+- [x] The same small function written three ways: declaration, expression, arrow
+- [x] Default parameters, and what a function returns when it has no `return`
+- [x] A function passed as an argument (callback) and called by another function
+- [x] Hoisting: calling each of the three forms **before** its definition, with a comment on what
       happens and why
-- [ ] When to use which form (my own rule, in a comment)
+- [x] When to use which form (my own rule, in a comment)
 
 ## Done when
 The tasks at the end of the three chapters are solved without the chapter open, and
