@@ -1,8 +1,8 @@
 # 006 Remote access from outside the home
 
-**Status:** Proposed
-**Date:** 2026-10-06
-**Decided in task:** 0.4
+**Status:** Accepted
+**Date:** 2026-11-13
+**Decided in task:** 0.9
 
 ## Context
 I need SSH and desktop access to the Mac mini, plus access to DSM and to lab services, from outside
@@ -35,5 +35,8 @@ Check before deciding: current Tailscale pricing and limits for personal use, an
 variant of Tailscale runs **before login** (matters for a headless server after a reboot).
 
 ## Decision
+
+- Choosing Tailscale for sensitive access like SSH and Screen Sharing, because it needs a client installed (only my trusted devices)
+- Choosing Cloudflare Tunnels for Services like `HomeAssistant` which should be easier to access (no client and trusted devices)
 
 ## Consequences

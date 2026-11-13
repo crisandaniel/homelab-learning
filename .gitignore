@@ -22,3 +22,6 @@ build/
 .next/
 coverage/
 *.tsbuildinfo
+
+# Home Assistant
+homelab/services/home-assistant/config/

@@ -1,0 +1,16 @@
+
+# https://www.home-assistant.io/installation/raspberrypi-other
+name: hl_homeassistant
+
+services: 
+  home-assistant: 
+    image: ghcr.io/home-assistant/home-assistant:2026.11.1
+    container_name: home-assistant 
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Bucharest
+    network_mode: host
+    volumes:
+      - ./config:/config
+      - /run/dbus:/run/dbus:ro
+
