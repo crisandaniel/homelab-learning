@@ -10,13 +10,13 @@ concept is the base of stage 4.
 
 ## Write (material closed)
 File: `examples.js`.
-- [ ] Dot vs. bracket access, computed keys, the `in` operator, `for...in`
-- [ ] Primitives copied by value vs. objects copied by reference, shown side by side
-- [ ] `===` on two objects with the same content vs. two variables pointing at the same object
-- [ ] Shallow copy (spread or `Object.assign`) vs. deep copy (`structuredClone`): where the shallow
+- [x] Dot vs. bracket access, computed keys, the `in` operator, `for...in`
+- [x] Primitives copied by value vs. objects copied by reference, shown side by side
+- [x] `===` on two objects with the same content vs. two variables pointing at the same object
+- [x] Shallow copy (spread or `Object.assign`) vs. deep copy (`structuredClone`): where the shallow
       copy still shares data
-- [ ] `const` with an object: what it prevents and what it does not
-- [ ] A function that mutates its argument by accident, and the fixed version
+- [x] `const` with an object: what it prevents and what it does not
+- [x] A function that mutates its argument by accident, and the fixed version
 
 ## Done when
 A function `updateUser(user, changes)` returns a **new** user with the changes applied and leaves
@@ -53,5 +53,13 @@ true    ...but its nested array is shared
 ---
 
 ## What surprised me
+- didn't have an explanation about obj.x vs obj[x] until now
 
 ## In my own words
+- to remember: shallow copy vs structuredClone()
+- assign a primitive to another primitive will copy the value to a new reference in memory (stack)
+- assign an object to another variable will create a new variable pointing to the same reference in memory (a new remote control to the same reference)
+- { ...obj } will return a new shallow copy of the `obj`
+- { ...obj, ...objNew } will return a new shallow copy of `obj` and then merge with another shallow copy of `objNew`;
+  common keys will take the values from `objNew` e.g. { ...{a: 1, b: 2, c: 3}, ...{b: 3, d: 4}} = {a: 1, b: 3, c: 3, d: 4}
+- for (key in obj) -> JS will sort ascending keys if they are numbers; else will be left as they were written

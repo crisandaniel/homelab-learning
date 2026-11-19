@@ -9,6 +9,12 @@ Both tracks, newest entry on top. Short is fine: date, track, task, what happene
 - Next:
 -->
 
+## 2026-11-19 · [dev] 1.3 objects
+- need to change approach and fasten the process
+- TBD: 
+  - use AI more for interaction rather than writing tests and then verifying by AI
+  - consider done a topic if I understand the concept and answered AI's questions
+
 ## 2026-11-09 · [dev] 1.2 functions
 - done with functions
 - things moved a bit faster with the new approach
